@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df4d5357-7091-4184-8379-e6fc89c8d0c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Lumberyard/LocalizationManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lumberyard/Lumberyard.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Lumberyard/Lumberyard.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lumberyard/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lumberyard/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumberyard/Lumberyard/LumberyardPatches.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lumberyard/Lumberyard/LumberyardPatches.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumberyard/Plugin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lumberyard/Plugin.cs" afterDir="false" />
     </list>
@@ -11,6 +10,10 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4dc9e5b312774ed097f459680404b14c198a00/79/c0cd2b0e/CraftingStation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4dc9e5b312774ed097f459680404b14c198a00/d5/ecef089c/Piece.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -56,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702235920553</updated>
-      <workItem from="1702235921656" duration="461000" />
+      <workItem from="1702235921656" duration="1857000" />
     </task>
     <servers />
   </component>

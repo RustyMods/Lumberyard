@@ -59,15 +59,15 @@ public static class LumberyardPatches
         }
     }
     // Container destroyed
-    [HarmonyPatch(typeof(CraftingStation), nameof(CraftingStation.OnDestroy))]
-    static class LumberyardOnDestroy
+    [HarmonyPatch(typeof(Piece), nameof(Piece.DropResources))]
+    static class LumberyardDropResources
     {
-        private static void Postfix(CraftingStation __instance)
+        private static void Postfix(Piece __instance)
         {
             if (!__instance) return;
             string normalizedName = __instance.name.Replace("(Clone)", "");
             if (normalizedName != "LumberYard_RS") return;
-            
+
             Container container = __instance.GetComponentInChildren<Container>();
             if (!container) return;
             
@@ -75,7 +75,7 @@ public static class LumberyardPatches
             container.DropAllItems(container.m_destroyedLootPrefab);
         }
     }
-    
+
     private static int connectedExtensions = 0;
     [HarmonyPatch(typeof(CraftingStation), nameof(CraftingStation.GetExtensions))]
     static class LumberyardExtensions
