@@ -109,7 +109,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="LocalizationManager.cs" />
         <Compile Include="Lumberyard\LumberyardPatches.cs" />
         <Compile Include="PieceManager\MaterialReplacer.cs" />
         <Compile Include="PieceManager\PieceManager.cs" />

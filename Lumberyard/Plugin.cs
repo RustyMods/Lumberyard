@@ -30,9 +30,6 @@ namespace Lumberyard
 
         public void Awake()
         {
-            // Uncomment the line below to use the LocalizationManager for localizing your mod.
-            //Localizer.Load(); // Use this to initialize the LocalizationManager (for more information on LocalizationManager, see the LocalizationManager documentation https://github.com/blaxxun-boop/LocalizationManager#example-project).
-
             _serverConfigLocked = config("1 - General", "Lock Configuration", Toggle.On,
                 "If on, the configuration is locked and can be changed by server admins only.");
             _ = ConfigSync.AddLockingConfigEntry(_serverConfigLocked);
@@ -75,9 +72,7 @@ namespace Lumberyard
             
             MaterialReplacer.RegisterGameObjectForMatSwap(Lumberyard_Ext2.Prefab.transform.GetChild(0).gameObject);
             MaterialReplacer.RegisterGameObjectForMatSwap(Lumberyard_Ext2.Prefab.transform.GetChild(1).gameObject);
-
-            // MaterialReplacer.RegisterGameObjectForShaderSwap(Lumberyard_Ext2.Prefab, MaterialReplacer.ShaderType.PieceShader);
-    
+            
             InitConfigs();
 
             Assembly assembly = Assembly.GetExecutingAssembly();

@@ -124,12 +124,18 @@ public static class LumberyardPatches
         {
             Container container = __instance.GetComponentInChildren<Container>();
             if (!container) return;
+            
+            // Set container display name to configurable name
             container.m_name = _ContainerName.Value;
             if (!ZNetScene.instance) return;
+            
+            // Get a chest background and set it to lumberyard container background
             GameObject TreasureChestHeath = ZNetScene.instance.GetPrefab("TreasureChest_heath");
             if (!TreasureChestHeath) return;
             if (!TreasureChestHeath.TryGetComponent(out Container ChestContainer)) return;
             container.m_bkg = ChestContainer.m_bkg;
+            
+            // Get the cargo crate and set it to lumberyard destroyed loot prefab
             GameObject karve = ZNetScene.instance.GetPrefab("Karve");
             Container? karveContainer = karve.GetComponentInChildren<Container>();
             if (!karveContainer) return;
@@ -156,6 +162,7 @@ public static class LumberyardPatches
             if (normalizedName != "LumberYard_RS") return;
             if (__result == null) return;
 
+            // Control which conversion recipes are allowed based on extensions
             switch (__result.m_dropPrefab.name)
             {
                 case "Acorn":
@@ -185,21 +192,24 @@ public static class LumberyardPatches
             if (!__instance) return false;
             if (!__instance.m_nview.IsValid()) return false;
 
-            if (containerFull) return false;
+            if (containerFull) return false; // If container is full, stop production
             
             string normalizedName = __instance.name.Replace("(Clone)", "");
             if (normalizedName != "LumberYard_RS") return true;
             
             Smelter.ItemConversion itemConversion = __instance.GetItemConversion(ore);
             if (itemConversion == null) return false;
+            
             GameObject lumber = itemConversion.m_to.gameObject;
             GameObject seed = itemConversion.m_from.gameObject;
             Container container = __instance.GetComponentInChildren<Container>();
 
+            // Create two values to compare to simulate a chance of getting seeds
             Random random = new Random();
             int randomIndex = random.Next(_ChanceOfSeed.Value, 100);
             int randomMatch = random.Next(_ChanceOfSeed.Value, 100);
             
+            // Set the multiplier value based on the configurations
             int value = stack;
             switch (seed.name)
             {
@@ -211,6 +221,8 @@ public static class LumberyardPatches
                 case "Sap": value *= _YggSeedMultiplier.Value; break;
                 case "AncientSeed": value *= _AncientSeedMultiplier.Value; break;
             }
+            
+            // Instead of spawning, add items into lumberyard container
             if (randomIndex == randomMatch) container.m_inventory.AddItem(seed, 1);
             container.m_inventory.AddItem(lumber, value);
             
@@ -229,6 +241,7 @@ public static class LumberyardPatches
             
             containerFull = container.m_inventory.GetEmptySlots() == 0;
             
+            // Update log visuals based on contents
             UpdateLogs(__instance, (containerWidth * containerHeight) - container.m_inventory.m_inventory.Count);
 
             return !containerFull;
@@ -261,7 +274,7 @@ public static class LumberyardPatches
 
             GrowthTimer = (GrowthTimer + 1) % 100; // value between 0 - 100
 
-            if (containerFull) return;
+            if (containerFull) return; // Stop updating visuals if container is full
 
             switch (QueuedOre)
             {
@@ -377,6 +390,7 @@ public static class LumberyardPatches
 
             List<GameObject> objects = new List<GameObject>() { Lumberyard, Lumberyard_Ext1, Lumberyard_Ext2 };
 
+            // Set all the initial data based on configurations
             foreach (GameObject obj in objects)
             {
                 SetWearNTearScript(obj, "vfx_SawDust", "sfx_wood_destroyed",
