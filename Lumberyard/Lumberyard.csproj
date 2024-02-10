@@ -95,6 +95,9 @@
         <Reference Include="UnityEngine.IMGUIModule">
             <HintPath>$(CorlibPath)\UnityEngine.IMGUIModule.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+          <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.PhysicsModule">
             <HintPath>$(CorlibPath)\UnityEngine.PhysicsModule.dll</HintPath>
         </Reference>
@@ -109,10 +112,14 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Lumberyard\LumberyardPatches.cs" />
+        <Compile Include="Lumberyard\AllowedPrefabs.cs" />
+        <Compile Include="Lumberyard\CraftingStationPatches.cs" />
+        <Compile Include="Lumberyard\InventoryPatches.cs" />
+        <Compile Include="Lumberyard\Patches.cs" />
+        <Compile Include="Lumberyard\PiecePatches.cs" />
+        <Compile Include="Lumberyard\SmelterPatches.cs" />
         <Compile Include="PieceManager\MaterialReplacer.cs" />
         <Compile Include="PieceManager\PieceManager.cs" />
-        <Compile Include="PieceManager\SnapPointMaker.cs" />
         <Compile Include="Plugin.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="VersionHandshake.cs" />
@@ -133,8 +140,6 @@
         <Content Include="Libs\ServerSync.dll">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <Content Include="LICENSE.md" />
-        <EmbeddedResource Include="translations\English.yml" />
         <Content Include="UpdateManifest.ps1" />
     </ItemGroup>
     <ItemGroup>

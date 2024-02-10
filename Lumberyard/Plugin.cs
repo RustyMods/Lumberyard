@@ -16,7 +16,7 @@ namespace Lumberyard
     public class LumberyardPlugin : BaseUnityPlugin
     {
         internal const string ModName = "Lumberyard";
-        internal const string ModVersion = "0.0.2";
+        internal const string ModVersion = "1.0.0";
         internal const string Author = "RustyMods";
         private const string ModGUID = Author + "." + ModName;
         private static string ConfigFileName = ModGUID + ".cfg";
@@ -146,6 +146,8 @@ namespace Lumberyard
 
         public static ConfigEntry<int> _ChanceOfSeed = null!;
         public static ConfigEntry<string> _ListOfAllowedPrefabs = null!;
+
+        public static ConfigEntry<Toggle> _AddMaxFuel = null!;
         #endregion
 
         private void InitConfigs()
@@ -181,6 +183,8 @@ namespace Lumberyard
             _OakRequiredExt = config("Required Extensions", "Oak", 1, new ConfigDescription("Required number of extensions for lumberyard to accept seeds", new AcceptableValueList<int>(0, 1, 2)));
             _YggRequiredExt = config("Required Extensions", "Yggashoot", 2, new ConfigDescription("Required number of extensions for lumberyard to accept seeds", new AcceptableValueList<int>(0, 1, 2)));
 
+            _AddMaxFuel = config("Utilities", "Add max fuel", Toggle.On,
+                "If on, plugin will add all available fuel instead of one at a time");
         }
         
 
