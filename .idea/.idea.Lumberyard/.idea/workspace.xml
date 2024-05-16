@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df4d5357-7091-4184-8379-e6fc89c8d0c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Lumberyard/Lumberyard/AllowedPrefabs.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lumberyard/Lumberyard/CraftingStationPatches.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lumberyard/Lumberyard/InventoryPatches.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lumberyard/Lumberyard/Patches.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lumberyard/Lumberyard/PiecePatches.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lumberyard/Lumberyard/SmelterPatches.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lumberyard/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lumberyard/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lumberyard/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lumberyard/Lumberyard.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Lumberyard/Lumberyard.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lumberyard/Lumberyard/LumberyardPatches.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lumberyard/PieceManager/SnapPointMaker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumberyard/Lumberyard/SmelterPatches.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lumberyard/Lumberyard/SmelterPatches.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumberyard/PieceManager/MaterialReplacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lumberyard/PieceManager/MaterialReplacer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumberyard/PieceManager/PieceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lumberyard/PieceManager/PieceManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumberyard/Plugin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lumberyard/Plugin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lumberyard/translations/English.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +78,10 @@
       <workItem from="1706693927928" duration="280000" />
       <workItem from="1707545688705" duration="4020000" />
       <workItem from="1707603997700" duration="104000" />
-      <workItem from="1707604112622" duration="1876000" />
+      <workItem from="1707604112622" duration="2301000" />
+      <workItem from="1713135020603" duration="108000" />
+      <workItem from="1714773065847" duration="1210000" />
+      <workItem from="1715872935890" duration="534000" />
     </task>
     <servers />
   </component>

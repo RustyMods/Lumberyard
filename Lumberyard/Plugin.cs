@@ -16,7 +16,7 @@ namespace Lumberyard
     public class LumberyardPlugin : BaseUnityPlugin
     {
         internal const string ModName = "Lumberyard";
-        internal const string ModVersion = "1.0.0";
+        internal const string ModVersion = "1.0.2";
         internal const string Author = "RustyMods";
         private const string ModGUID = Author + "." + ModName;
         private static string ConfigFileName = ModGUID + ".cfg";

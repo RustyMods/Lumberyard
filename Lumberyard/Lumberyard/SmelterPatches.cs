@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using BepInEx;
 using HarmonyLib;
 using UnityEngine;
-using Random = System.Random;
 
 namespace Lumberyard.Lumberyard;
 
@@ -148,11 +147,8 @@ public static class SmelterPatches
             GameObject seed = itemConversion.m_from.gameObject;
             Container container = __instance.GetComponentInChildren<Container>();
 
-            // Create two values to compare to simulate a chance of getting seeds
-            Random random = new Random();
-            int randomIndex = random.Next(LumberyardPlugin._ChanceOfSeed.Value, 100);
-            int randomMatch = random.Next(LumberyardPlugin._ChanceOfSeed.Value, 100);
-            
+            int random = UnityEngine.Random.Range(0, 101);
+
             // Set the multiplier value based on the configurations
             int value = stack;
             switch (seed.name)
@@ -167,7 +163,7 @@ public static class SmelterPatches
             }
             
             // Instead of spawning, add items into lumberyard container
-            if (randomIndex == randomMatch) container.m_inventory.AddItem(seed, 1);
+            if (random < LumberyardPlugin._ChanceOfSeed.Value) container.m_inventory.AddItem(seed, 1);
             container.m_inventory.AddItem(lumber, value);
             
             return false;
